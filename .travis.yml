@@ -1,0 +1,6 @@
+script:
+  - bundle exec sassunit
+
+language: sass
+before_install:
+  - gem install sass sassunit

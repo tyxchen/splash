@@ -1,0 +1,20 @@
+// Grid mixins
+
+$splash--columns: 12;
+
+@import "../splash";
+
+body {
+  @include grid;
+}
+body > div {
+  @include columns(3);
+  @include group(4);
+}
+body > span {
+  @include columns(5);
+
+  &:nth-of-type(odd) {
+    @include split;
+  }
+}

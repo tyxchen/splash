@@ -1,0 +1,22 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+body > * {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  margin: 0;
+}
+body > div {
+  width: 25%;
+}
+body > div:nth-of-type(4n+1) {
+  clear: both;
+}
+body > span {
+  width: 41.66667%;
+}
+body > span:nth-of-type(odd) {
+  clear: both;
+}
