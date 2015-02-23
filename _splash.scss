@@ -1,0 +1,58 @@
+// Splash - an AoPS Blog CSS Framework
+//
+// Made by AoPS user NeoMathematicalKid
+//
+// v0.0.1-dev
+//
+// Copyright (c) 2014 AoPS user NeoMathematicalKid under the MIT License
+//
+// https://github.com/tyxchen/splash
+
+// Returns the largest element in a list
+//
+// $list - A list composed of numbers, with or without units
+@function list-max($list) {
+  $max: 0;
+
+  @each $i in $list {
+    @if $i > $max {
+      $max: $i;
+    }
+  }
+
+  @return $max;
+}
+
+// Initializes a grid for an element
+@mixin grid {
+  width: 100%;
+  margin: 0 auto;
+
+  > * {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+  }
+}
+
+// Makes an element in a grid span a certain number of columns
+//
+// $num - The number of columns to span
+@mixin columns($num) {
+  width: (100 / ($splash--columns / $num)) * 1%;
+}
+
+// Split into a new row
+@mixin split {
+  clear: both;
+}
+
+// Groups elements into rows, each with a fixed number of columns
+//
+// $num - The number of columns per row
+@mixin group($num) {
+  &:nth-of-type(#{$num}n+1) {
+    clear: both;
+  }
+}
